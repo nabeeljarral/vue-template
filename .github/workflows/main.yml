@@ -23,8 +23,6 @@ jobs:
           npm install
           npm update
           npm run build
-          npm install sortablejs@^1.14.0 --save
-            npm install vue-draggable-next@latest --save
 
         env: 
           CI: true   
@@ -51,10 +49,6 @@ jobs:
               nvm install 14
               rm -rf node_modules
               npm install -g pm2
-              npm install webpack@^5.0.0 --save-dev
-              npm install file-loader@latest --save-dev
-              npm install sortablejs@^1.14.0 --save
-              npm install vue-draggable-next@latest --save
               cd ~/vue-template
               git fetch origin
               git remote -v
