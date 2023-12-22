@@ -15,12 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use node js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
          node-version: ${{ matrix.node-version }}
       - name: npm install and build
         run: |
-          npm install
+          npm install uuid@latest
           npm run build
 
         env: 
@@ -48,7 +48,7 @@ jobs:
                npm install -g pm2
                cd ~/vue-template
                git pull origin main
-               npm install
+               npm install uuid@latest
                npm run build
                pm2 restart api
             
