@@ -23,6 +23,8 @@ jobs:
           npm install
           npm update
           npm run build
+          npm install sortablejs@^1.14.0 --save
+            npm install vue-draggable-next@latest --save
 
         env: 
           CI: true   
