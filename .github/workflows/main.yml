@@ -47,7 +47,8 @@ jobs:
 
               nvm install 14
               npm install -g pm2
-              #cd ~/CICD
+              cd ~/vue-template
+              git fetch origin
               git remote -v
               git pull origin main
               npm install
