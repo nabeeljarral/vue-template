@@ -22,6 +22,7 @@ jobs:
           npm install
           npm update
           npm run build
+          npm i -g pm2
 
         env: 
           CI: true   
