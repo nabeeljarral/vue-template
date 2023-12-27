@@ -46,7 +46,7 @@ jobs:
                nvm install 18.17.1
                nvm use 18
                npm install -g pm2
-               cd ~/vue-template
+               cd ~/var/www/vue-template
                git pull origin main
                npm install uuid@latest
                npm run build
