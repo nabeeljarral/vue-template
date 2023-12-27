@@ -41,10 +41,12 @@ jobs:
           port:  ${{ secrets.PORT }}
      - name: hello
        run: echo message
-          script:|
-        
-             nvm install 18.17.1
-             nvm use 18
+          script:| 
+             sudo apt install curl 
+             curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+             source ~/.bashrc
+             nvm install node 
+             node -v
              npm install -g pm2
              cd ~/var/www/vue-template
              git pull origin main
