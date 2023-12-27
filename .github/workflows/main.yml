@@ -42,8 +42,7 @@ jobs:
      - name: hello
        run: echo message
           script:|
-             sudo apt update
-             sudo apt install curl 
+             sudo apt-get update && sudo apt-get install -y curl
              curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash 
              source ~/.bashrc
              nvm --version
