@@ -43,6 +43,7 @@ jobs:
        run: echo message
           script:| 
              sudo apt install curl 
-             curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+             source ~/.bashrc
              -v nvm
              
