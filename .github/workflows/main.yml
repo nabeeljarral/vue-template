@@ -43,6 +43,5 @@ jobs:
        run: echo message
           script:| 
              sudo apt install curl 
-             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-             -v nvm
+             curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh
              
