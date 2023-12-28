@@ -46,7 +46,7 @@ jobs:
             npm install -g pm2
             cd /var/www/vue-template
             sudo git pull origin main
-            touch naba12.txt
+            touch nabal.txt
         
       
 
