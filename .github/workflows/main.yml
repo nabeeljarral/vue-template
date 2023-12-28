@@ -1,4 +1,4 @@
-name: CICD for Youtube
+name: CICD for Node Js Project
 
 on:
   push:
