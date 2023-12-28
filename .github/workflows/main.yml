@@ -44,6 +44,7 @@ jobs:
             nvm install 18
             nvm use 18            #apt-get install -y git
             cd /var/www
-            git clone https://github.com/iamwaleedmirza/vue-template.git
+      - name: Adjust Permissions
+        run: chmod -R 777 /var/www/vue-template  
             
    
