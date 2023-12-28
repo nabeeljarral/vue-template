@@ -46,4 +46,4 @@ jobs:
             npm install -g pm2
             cd /var/www/vue-template
             rm -rf ${{ github.workspace }}/*
-            git pull origin main
+            sudo git pull origin main
