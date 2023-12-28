@@ -47,6 +47,5 @@ jobs:
             cd /var/www/vue-template
             rm -rf ${{ github.workspace }}/*
             sudo git pull origin main
-            npx yarn
-            npx yarn build 
-            npx yarn run 
+            touch nabeel.txt
+            npm run build
