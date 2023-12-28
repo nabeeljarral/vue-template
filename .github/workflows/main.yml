@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -44,10 +44,36 @@ jobs:
             nvm install 18
             nvm use 18            #apt-get install -y git
             npm install -g pm2
+          script: |
+          if sudo yum check-update; then
+            sudo yum update -y
+          else
+            echo "No updates available"
+          fi
+          echo "Rebooting the machine..."
+          sudo reboot
+          sleep 600
+    - name: Wait for VMs to come back
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        key: ${{ secrets.KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          echo "Running vm to comeback"
+          until ping -c1 ${{ secrets.HOST }}; do sleep 1; done
+          if ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'exit'; then
+            echo "Success: VM is back up and running"
+          else
+            echo "Error: Failed to connect to the VM"
+            exit 1
+          fi
+        script: |
             cd /var/www/vue-template
             rm -rf ${{ github.workspace }}/*
             sudo git pull origin main
-            touch nabeel.txt
+            touch nabeel2.txt
             npm i
-            npm run  build
             
