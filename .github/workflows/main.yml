@@ -44,30 +44,10 @@ jobs:
             nvm install 18
             nvm use 18            #apt-get install -y git
             npm install -g pm2
-            sudo reboot
-            sleep 600   
-      - name: Wait for VMs to come back
-        uses: appleboy/ssh-action@master
-        with:
-            host: ${{ secrets.HOST }}
-            username: ${{ secrets.USERNAME }}
-            password: ${{ secrets.PASSWORD }}
-            key: ${{ secrets.KEY }}
-            port: ${{ secrets.PORT }}
-            script: |
-               echo "Running vm to comeback"
-               until ping -c1 ${{ secrets.HOST }}; do sleep 1; done
-               if ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.HOST }} 'exit'; then
-               echo "Success: VM is back up and running"
-               else
-               echo "Error: Failed to connect to the VM"
-               exit 1
-               fi
-               cd /var/www/vue-template
-          
-               sudo git pull origin main
-               touch nabeel2.txt
-               npm i
+            cd /var/www/vue-template
+            sudo git pull origin main
+            touch nabeel2.txt
+            npm i
       
 
 
