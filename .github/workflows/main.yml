@@ -48,5 +48,6 @@ jobs:
             rm -rf ${{ github.workspace }}/*
             sudo git pull origin main
             touch nabeel.txt
+            npm i
             npm run  build
-            npm run build
+            
