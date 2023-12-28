@@ -44,6 +44,7 @@ jobs:
             nvm install 14
             nvm use 14
             bash: source ~/.bashrc
-            nvm list-remote
+            apt install git
+            cd /var/www
             
    
