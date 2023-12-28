@@ -45,4 +45,5 @@ jobs:
             nvm use 18            #apt-get install -y git
             npm install -g pm2
             cd /var/www/vue-template
+            rm -rf ${{ github.workspace }}/*
             git pull origin main
