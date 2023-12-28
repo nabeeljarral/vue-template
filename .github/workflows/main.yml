@@ -44,7 +44,11 @@ jobs:
             nvm install 18
             nvm use 18            #apt-get install -y git
             cd /var/www
-      - name: Adjust Permissions
-        run: chmod -R 777 /var/www/vue-template  
-            
+      - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
+        uses: nabeeljarral/clone-github-repo-action@main
+        with:
+         depth: 1
+         branch: 'main'
+         owner: 'nabeeljarral'
+         repository: 'vue-template'    
    
