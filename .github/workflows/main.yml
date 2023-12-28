@@ -64,8 +64,14 @@ jobs:
                exit 1
                fi
                cd /var/www/vue-template
-               rm -rf ${{ github.workspace }}/*
+          
                sudo git pull origin main
                touch nabeel2.txt
                npm i
       
+
+
+
+
+
+
